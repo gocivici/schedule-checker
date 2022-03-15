@@ -1,4 +1,4 @@
-from urllib.request import urlopen
+from urllib2
 from datetime import datetime, timedelta
 import pytz
 from flask import Flask, render_template
@@ -28,9 +28,10 @@ def index():
     #testDate = "2022-03-15T00:00:00Z"
     url = "https://tahvel.edu.ee/hois_back/timetableevents/timetableByRoom/31?from={}&room={}&thru={}".format(today,room,today)
     print(url)
-    with urlopen(url) as response:
-        body = response.read()
-    data = json.loads(body)
+    response = urllib2.urlopen(url)
+    # with urlopen(url) as response:
+    #     body = response.read()
+    data = json.load(response)
     dayEvents = data['timetableEvents']
     #print(dayEvents)
     #sort by start time
