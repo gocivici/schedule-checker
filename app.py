@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 import pytz
 from flask import Flask, render_template
 import json
+import requests
 
 def time_in_range(start, end, current):
     """Returns whether current is in the range [start, end]"""
@@ -28,10 +29,11 @@ def index():
     #testDate = "2022-03-15T00:00:00Z"
     url = "https://tahvel.edu.ee/hois_back/timetableevents/timetableByRoom/31?from={}&room={}&thru={}".format(today,room,today)
     print(url)
-    response = urlopen(url)
+    #response = urlopen(url)
     # with urlopen(url) as response:
-    #     body = response.read()
-    data = json.load(response)
+    #body = response.read()
+    response = requests.get(url)
+    data = response.json()
     dayEvents = data['timetableEvents']
     #print(dayEvents)
     #sort by start time
@@ -101,4 +103,6 @@ def index():
     #st.markdown("<h1 style='text-align: center; color: white;'>{}</h1>".format(status), unsafe_allow_html=True)
 if __name__ == "__main__":
     #app.run(host='localhost', port=5000, debug=True)
+    #from waitress import serve
+    #serve(app,host="0.0.0.0")
     app.run(host="0.0.0.0")
