@@ -25,8 +25,8 @@ def index():
     currentTime = "15:20:00"
     currentTime = datetime.strptime( currentTime,"%H:%M:%S")
     print(currentTime)
-    testDate = "2022-03-15T00:00:00Z"
-    url = "https://tahvel.edu.ee/hois_back/timetableevents/timetableByRoom/31?from={}&room={}&thru={}".format(testDate,room,testDate)
+    #testDate = "2022-03-15T00:00:00Z"
+    url = "https://tahvel.edu.ee/hois_back/timetableevents/timetableByRoom/31?from={}&room={}&thru={}".format(today,room,today)
     print(url)
     with urlopen(url) as response:
         body = response.read()
