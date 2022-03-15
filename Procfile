@@ -1,1 +1,1 @@
-web: gunicorn app:app --worker-class eventlet --log-level debug --bind 0.0.0.0 
+web: gunicorn --workers=3 app:app --timeout 200 --log-file -
