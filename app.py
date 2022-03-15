@@ -22,7 +22,7 @@ def index():
     timezone = pytz.timezone("Europe/Tallinn")
     currentAware = current.astimezone(timezone)
     currentTime = currentAware.strftime("%H:%M:%S")
-    currentTime = "15:20:00"
+    #currentTime = "15:20:00"
     currentTime = datetime.strptime( currentTime,"%H:%M:%S")
     print(currentTime)
     #testDate = "2022-03-15T00:00:00Z"
@@ -100,4 +100,4 @@ def index():
     #st.markdown("<h1 style='text-align: center; color: white;'>{}</h1>".format(status), unsafe_allow_html=True)
 if __name__ == "__main__":
     #app.run(host='localhost', port=5000, debug=True)
-    app.run()
+    app.run(host="0.0.0.0")
