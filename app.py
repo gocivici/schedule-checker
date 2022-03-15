@@ -32,8 +32,13 @@ def index():
     #response = urlopen(url)
     # with urlopen(url) as response:
     #body = response.read()
+    # if response.status_code != 204:
+    #     response = requests.get(url)
     response = requests.get(url)
+    response.raise_for_status()
     data = response.json()
+
+
     dayEvents = data['timetableEvents']
     #print(dayEvents)
     #sort by start time
