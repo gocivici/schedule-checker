@@ -37,7 +37,7 @@ h1{
 @media only screen and (max-width: 470px) {
   h1{
     font-size:130px;
-    margin-top:40%;
+    margin-top:0;
 
   }
   .button{
