@@ -45,7 +45,7 @@ def index():
     file = open('data.json')
 
 
-    data = json.loads(file.read().decode('UTF-8'))
+    data = json.loads(file.read())
 
     dayEvents = data['timetableEvents']
     #print(dayEvents)
