@@ -4,7 +4,7 @@ import pytz
 from flask import Flask, render_template
 import json
 import requests
-
+str = unicode(str, errors='ignore')
 def time_in_range(start, end, current):
     """Returns whether current is in the range [start, end]"""
     return start <= current <= end
