@@ -28,7 +28,7 @@ def index():
     print(currentTime)
     #testDate = "2022-03-15T00:00:00Z"
     #url = "https://httpstat.us/200"
-    headers = {'Host': 'tahvel.edu.ee','Connection' :'keep-alive', 'Accept' : 'application/json, text/plain, */*', 'User-Agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1','Referer': 'https://tahvel.edu.ee/' }
+    headers = {'Accept' : 'application/json, text/plain, */*','Host': 'tahvel.edu.ee','Connection' :'keep-alive', 'Referer': 'https://isd306free.herokuapp.com/' }
     url = "https://tahvel.edu.ee/hois_back/timetableevents/timetableByRoom/31?from={}&room={}&thru={}".format(today,room,today)
     print(url)
     #response = urlopen(url)
