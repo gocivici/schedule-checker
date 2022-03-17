@@ -23,7 +23,7 @@ def index():
     timezone = pytz.timezone("Europe/Tallinn")
     currentAware = current.astimezone(timezone)
     currentTime = currentAware.strftime("%H:%M:%S")
-    #currentTime = "15:20:00"
+    #currentTime = "22:00:00"
     currentTime = datetime.strptime( currentTime,"%H:%M:%S")
     print(currentTime)
     #testDate = "2022-03-15T00:00:00Z"
@@ -63,14 +63,13 @@ def index():
             print(endTime)
             if currentTime<startTime and (startTime-currentTime >= timedelta(minutes=60)):
                 availableStatus = "YES🎉"
-                subText = "Class is free until {}".format(items['timeStart'])
+                subText = """Class is free until {}""".format(items['timeStart'])
                 #subText = "There is another class in: {}".format(startTime-currentTime)
                 backColor = "#8AC05E"
                 break
             elif currentTime<startTime:
-                availableStatus = "YES,🤔 but.."
-                subText = "Class is free until {}".format(items['timeStart'])
-                subText = "There is another class in {} minutes".format(int((startTime-currentTime).total_seconds() / 60))
+                availableStatus = "Yes, but.."
+                subText = "{} will start in {} minutes".format(items['nameEn'],int((startTime-currentTime).total_seconds() / 60))
                 backColor = "#FEBB23"
                 break
             elif time_in_range(startTime, endTime, currentTime):
