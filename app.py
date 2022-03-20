@@ -26,9 +26,6 @@ def index():
     #currentTime = "22:00:00"
     currentTime = datetime.strptime( currentTime,"%H:%M:%S")
     print(currentTime)
-    #testDate = "2022-03-15T00:00:00Z"
-    #url = "https://httpstat.us/200"
-    #headers = {'Accept' : '*/*','Host': 'https://tahvel.edu.ee','Connection' :'keep-alive' }
     url = "https://tahvel.edu.ee/hois_back/timetableevents/timetableByRoom/31?from={}&room={}&thru={}".format(today,room,today)
     print(url)
     #response = urlopen(url)
@@ -88,7 +85,7 @@ def index():
     #Center text
         # Render HTML with count variable
         #print(status)
-    print(time_in_range(startTime, endTime, currentTime))
+    #print(time_in_range(startTime, endTime, currentTime))
 
     return render_template("index.html", status=availableStatus, backColor=backColor, subText=subText)
 
