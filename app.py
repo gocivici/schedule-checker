@@ -13,6 +13,9 @@ app = Flask(__name__)
 def index():
     #room id
     room = "3439"
+    availableStatus = "No classes today"
+    backColor = "#8AC05E"
+    subText = " "
     #get date and time for today
     today = datetime.today().strftime("%Y-%m-%dT00:00:00Z")
     #today = "2022-03-17T00:00:00Z"
