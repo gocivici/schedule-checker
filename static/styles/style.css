@@ -6,9 +6,28 @@ body {
   /* position: absolute; */
   left: 0;
   right: 0;
-  margin: 10%;
+  /* margin: 10%; */
   text-align: center;
 
+}
+.footer{
+font-family: 'Arial', sans-serif;
+font-size: 12px;
+position: absolute;
+bottom: 10px;
+left: 0;
+right: 0;
+width: 100%;
+text-align: center;
+margin: auto;
+color: #ECECEC;
+/* position: absolute; */
+}
+a {
+  color: white;
+}
+p{
+  /* margin:0px; */
 }
 h1{
   font-size:150px;
