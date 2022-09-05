@@ -59,6 +59,8 @@ def index():
             startTime =datetime.strptime( (items['timeStart'] + ":00"),"%H:%M:00")
             endTime = datetime.strptime( (items['timeEnd'] + ":00"),"%H:%M:00")
             print(datetime.strptime((items['date'].split('T'))[0],"%Y-%m-%d"))
+            if (items['nameEn'] == None):
+                items['nameEn'] = items['nameEt']
             print(startTime)
             print(endTime)
             if currentTime<startTime and (startTime-currentTime >= timedelta(minutes=60)):
