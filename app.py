@@ -75,7 +75,7 @@ def index():
                 backColor = "#FEBB23"
                 break
             elif time_in_range(startTime, endTime, currentTime):
-                availableStatus = "No😔"
+                availableStatus = "No.😔"
                 eventName = items['nameEn']
                 subText = " will end at {}".format(items['timeEnd'])
                 backColor = "#F04A32"
