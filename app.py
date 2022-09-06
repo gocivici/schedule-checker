@@ -66,6 +66,7 @@ def index():
             print(endTime)
             if currentTime<startTime and (startTime-currentTime >= timedelta(minutes=60)):
                 availableStatus = "YES🎉"
+                eventName = ""
                 subText = """Class is free until {}""".format(items['timeStart'])
                 backColor = "#8AC05E"
                 break
