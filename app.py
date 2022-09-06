@@ -15,7 +15,8 @@ def index():
     room = "3439"
     availableStatus = "YES🎉"
     backColor = "#8AC05E"
-    subText = "No data found for today"
+    subText = "found for today"
+    eventName = "No data"
     #get date and time for today
     today = datetime.today().strftime("%Y-%m-%dT00:00:00Z")
     #today = "2022-03-17T00:00:00Z"
