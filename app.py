@@ -70,12 +70,14 @@ def index():
                 break
             elif currentTime<startTime:
                 availableStatus = "Yes, but.."
-                subText = "{} will start in {} minutes".format(items['nameEn'],int((startTime-currentTime).total_seconds() / 60))
+                eventName = items['nameEn']
+                subText = " will start in {} minutes".format(int((startTime-currentTime).total_seconds() / 60))
                 backColor = "#FEBB23"
                 break
             elif time_in_range(startTime, endTime, currentTime):
                 availableStatus = "No😔"
-                subText = "{} will end at {}".format(items['nameEn'],items['timeEnd'])
+                eventName = items['nameEn']
+                subText = " will end at {}".format(items['timeEnd'])
                 backColor = "#F04A32"
                 print("status No")
                 break
@@ -92,7 +94,7 @@ def index():
         #print(status)
     #print(time_in_range(startTime, endTime, currentTime))
 
-    return render_template("index.html", status=availableStatus, backColor=backColor, subText=subText)
+    return render_template("index.html", status=availableStatus, backColor=backColor, subText=subText,eventName=eventName)
 
     #st.markdown("<h1 style='text-align: center; color: white;'>{}</h1>".format(status), unsafe_allow_html=True)
 if __name__ == "__main__":
